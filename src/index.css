@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  
+  --color-brand-primary: #064e3b;
+  --color-brand-secondary: #0d9488;
+  --color-brand-accent: #1e293b;
+  --color-brand-neutral: #f5f5f4;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-white text-brand-accent font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20 px-6 md:px-12 lg:px-24;
+  }
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  .btn-primary {
+    @apply bg-brand-primary text-white px-8 py-3 rounded-full font-medium transition-all hover:bg-brand-secondary hover:shadow-lg active:scale-95;
+  }
+  .btn-outline {
+    @apply border-2 border-brand-primary text-brand-primary px-8 py-3 rounded-full font-medium transition-all hover:bg-brand-primary hover:text-white active:scale-95;
+  }
+}
